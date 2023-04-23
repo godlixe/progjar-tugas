@@ -3,9 +3,6 @@ import socket
 import logging
 import threading
 
-
-
-
 def kirim_data():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     logging.warning("membuka socket")
@@ -35,7 +32,7 @@ def kirim_data():
 if __name__=='__main__':
     threads = []
     catat_awal = time.perf_counter()
-    for i in range(100):
+    for i in range(100000):
         t = threading.Thread(target=kirim_data)
         threads.append(t)
 
