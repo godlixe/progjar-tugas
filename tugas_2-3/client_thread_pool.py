@@ -1,22 +1,22 @@
-import sys
 import socket
 import logging
-import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 
-def kirim_data(nama="kosong"):
-    logging.warning(f"nama {nama}")
+
+
+def kirim_data():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     logging.warning("membuka socket")
 
-    server_address = ('localhost', 8889)
+    server_address = ('localhost', 45000)
     logging.warning(f"opening socket {server_address}")
     sock.connect(server_address)
 
     try:
         # Send data
-        message = 'INI ADALAH DATA YANG DIKIRIM ABCDEFGHIJKLMNOPQ'
-        # logging.warning(f"[CLIENT] sending {message}")
+        message = 'TIME \r\n'
         sock.sendall(message.encode())
         # Look for the response
         amount_received = 0
@@ -32,10 +32,11 @@ def kirim_data(nama="kosong"):
 
 
 if __name__=='__main__':
-    threads = []
-    for i in range(3):
-        t = threading.Thread(target=kirim_data, args=(i,))
-        threads.append(t)
 
-    for thr in threads:
-        thr.start()
+    catat_awal = time.perf_counter()
+    with ThreadPoolExecutor() as executor:
+        for i in range(0, 100):
+            executor.submit(kirim_data)
+    catat_akhir = time.perf_counter()
+    selesai = round(catat_akhir - catat_awal,3)
+    print(f"Waktu TOTAL yang dibutuhkan {selesai} detik {catat_awal} s/d {catat_akhir}")

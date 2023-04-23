@@ -1,8 +1,8 @@
-import sys
+import time
 import socket
 import logging
-
-
+import threading
+from multiprocessing import Process
 
 def kirim_data():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -31,5 +31,16 @@ def kirim_data():
 
 
 if __name__=='__main__':
-    for i in range(1,10):
-        kirim_data()
+    threads = []
+    catat_awal = time.perf_counter()
+    for i in range(100):
+        t = Process(target=kirim_data)
+        threads.append(t)
+
+    for thr in threads:
+        thr.start()
+        thr.join()
+    
+    catat_akhir = time.perf_counter()
+    selesai = round(catat_akhir - catat_awal,3)
+    print(f"Waktu TOTAL yang dibutuhkan {selesai} detik {catat_awal} s/d {catat_akhir}")
