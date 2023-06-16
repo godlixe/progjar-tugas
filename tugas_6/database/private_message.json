@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "sender": "alex",
+            "sender_realm": "1",
+            "receiver": "user1",
+            "receiver_realm": "1",
+            "message": "hello",
+            "created_at": "2023-06-10 21:00:00"
+        },
+        {
+            "sender": "user1",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user2",
+            "receiver_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "message": "  halopi \r\n",
+            "created_at": "2023-06-16 20:32:31.931855"
+        },
+        {
+            "sender": "user1",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user2",
+            "receiver_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "message": "  bibi \r\n",
+            "created_at": "2023-06-16 20:33:13.016737"
+        },
+        {
+            "sender": "user1",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user1",
+            "receiver_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "message": "  hi \r\n",
+            "created_at": "2023-06-16 22:46:10.299234"
+        },
+        {
+            "sender": "user1",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user2",
+            "receiver_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "message": "  haloo \r\n",
+            "created_at": "2023-06-16 22:46:21.290692"
+        },
+        {
+            "sender": "user2",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user3",
+            "receiver_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "message": "  haloo \r\n",
+            "created_at": "2023-06-16 22:57:45.008624"
+        },
+        {
+            "sender": "user1",
+            "sender_realm": "c8adceb6-b41e-47e2-818a-a38c3451c9a0",
+            "receiver": "user4",
+            "receiver_realm": "e9fff041-9e6c-4d4a-bba0-0d27365e7b79",
+            "message": "  tesprivate \r\n",
+            "created_at": "2023-06-16 23:04:27.658825"
+        }
+    ]
+}

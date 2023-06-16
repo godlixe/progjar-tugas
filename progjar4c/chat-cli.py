@@ -32,6 +32,7 @@ class ChatClient:
                 return "*Maaf, command tidak benar"
         except IndexError:
                 return "-Maaf, command tidak benar"
+        
     def sendstring(self,string):
         try:
             self.sock.sendall(string.encode())
@@ -47,6 +48,7 @@ class ChatClient:
         except:
             self.sock.close()
             return { 'status' : 'ERROR', 'message' : 'Gagal'}
+        
     def login(self,username,password):
         string="auth {} {} \r\n" . format(username,password)
         result = self.sendstring(string)
@@ -55,6 +57,7 @@ class ChatClient:
             return "username {} logged in, token {} " .format(username,self.tokenid)
         else:
             return "Error, {}" . format(result['message'])
+        
     def sendmessage(self,usernameto="xxx",message="xxx"):
         if (self.tokenid==""):
             return "Error, not authorized"
@@ -65,6 +68,7 @@ class ChatClient:
             return "message sent to {}" . format(usernameto)
         else:
             return "Error, {}" . format(result['message'])
+        
     def inbox(self):
         if (self.tokenid==""):
             return "Error, not authorized"

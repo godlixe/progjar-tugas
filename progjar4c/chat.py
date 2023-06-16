@@ -41,6 +41,7 @@ class Chat:
 			return { 'status': 'ERROR', 'message' : 'Informasi tidak ditemukan'}
 		except IndexError:
 			return {'status': 'ERROR', 'message': '--Protocol Tidak Benar'}
+		
 	def autentikasi_user(self,username,password):
 		if (username not in self.users):
 			return { 'status': 'ERROR', 'message': 'User Tidak Ada' }
@@ -49,10 +50,12 @@ class Chat:
 		tokenid = str(uuid.uuid4()) 
 		self.sessions[tokenid]={ 'username': username, 'userdetail':self.users[username]}
 		return { 'status': 'OK', 'tokenid': tokenid }
+	
 	def get_user(self,username):
 		if (username not in self.users):
 			return False
 		return self.users[username]
+	
 	def send_message(self,sessionid,username_from,username_dest,message):
 		if (sessionid not in self.sessions):
 			return {'status': 'ERROR', 'message': 'Session Tidak Ditemukan'}

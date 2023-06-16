@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "username": "user1",
+            "password": "12345",
+            "realm_id": "c8adceb6-b41e-47e2-818a-a38c3451c9a0"
+        },
+        {
+            "username": "user2",
+            "password": "12345",
+            "realm_id": "c8adceb6-b41e-47e2-818a-a38c3451c9a0"
+        },
+        {
+            "username": "user3",
+            "password": "12345",
+            "realm_id": "c8adceb6-b41e-47e2-818a-a38c3451c9a0"
+        },
+        {
+            "username": "user4",
+            "password": "12345",
+            "realm_id": "e9fff041-9e6c-4d4a-bba0-0d27365e7b79"
+        }
+    ]
+}
